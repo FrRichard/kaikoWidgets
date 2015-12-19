@@ -1,0 +1,21 @@
+@import url('../../libs/gridstack/dist/gridstack.css');
+@import url('/client/style/navbar.css');
+
+body {
+	background: #2B5988;
+	margin: 0;
+}
+
+.grid-stack {
+	margin: 1em;
+}
+
+.grid-stack-item {
+}
+
+.grid-stack-item-content {
+	background: white;
+}
+
+
+

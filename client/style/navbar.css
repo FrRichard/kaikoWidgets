@@ -1,0 +1,44 @@
+.navbar {
+	background: #F8F8F8;
+	margin: 0 0 2em 0;
+	/*height: 4em;*/
+}
+
+.navbar > ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+.navbar  li {
+	float: left;
+}
+
+.navbar  a {
+	text-decoration: none !important;
+	display: block;
+	color: #777;
+	font-weight: 700;
+	font-size: 1.2em;
+	padding: 1em;
+}
+
+a:hover {
+	color: #3D3434;
+}
+.selectedNavbar {
+	font-color:#555;
+	background-color: #e7e7e7;
+}
+
+/* #555 #e7e7e7 */
+
+
+
+/*<ul>
+  <li><a href="default.asp">Home</a></li>
+  <li><a href="news.asp">News</a></li>
+  <li><a href="contact.asp">Contact</a></li>
+  <li><a href="about.asp">About</a></li>
+</ul>*/
