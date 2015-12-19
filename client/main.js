@@ -4,14 +4,31 @@
 // There usage will become more apparent further along in the tutorial.
 require.config({
 	paths: {
+		//conf
+		dashboard_conf: '../client/config/dashboard_conf',
+
 		//libs
 		jquery: '../bower_components/jquery/dist/jquery.min',
+		// "jquery-ui": '../bower_components/jquery-ui/jquery-ui.min',
 		lodash: '../bower_components/lodash/lodash',
 		backbone: '../bower_components/backbone/backbone-min',
 		underscore: '../bower_components/underscore/underscore-min',
+		gridstack: '../libs/gridstack/dist/gridstack',
+		text: '../bower_components/text/text',
 
 		// router
-		router: '/client/router/router'
+		router: '/client/router/router',
+
+		//dashboard
+		grid: '/client/Grid',
+
+		//views
+		navbarView: '/client/views/navbarView',
+
+		//models
+
+
+		//collections
 
 
 	},
@@ -27,6 +44,14 @@ require.config({
 	    },
 	    "jquery": {
 	    	exports: "$"
+	    },
+	    // "jquery-ui": {
+	    // 	deps: ['jquery'],
+	    // 	exports: "jquery-ui"
+	    // },
+	    "gridstack": {
+	    	deps: ['jquery','underscore'],
+	    	exports: "Gridstack"
 	    }
 	}
 

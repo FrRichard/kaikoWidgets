@@ -1,10 +1,19 @@
 define('router',[
 	'backbone',
 	'jquery',
-	'lodash'
-	] , function(Backbone, $, _) {
+	'lodash',
+	'Grid',
+	'navbarView'
+	] , function(Backbone, $, _, Grid, NavbarView) {
 
 	var Router = Backbone.Router.extend({
+		initialize: function() {
+			console.log('router initialize Grid', Grid());
+			// init navbar
+			var navbarView = new NavbarView();
+			navbarView.render();
+		},
+
 		routes: {
 			'': 'type',
 			'*type': 'type',
