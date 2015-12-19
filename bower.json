@@ -1,0 +1,16 @@
+{
+  "name": "kaiko-embeddable",
+  "version": "0.1",
+  "author": "FrRichard",
+  "dependencies": {
+    "jquery": "*",
+    "lodash": "*",
+    "backbone": "*",
+    "momentjs": "*",
+    "store.js": "*",
+    "d3": "*"
+  },
+  "devDependencies": {
+    "chance": "*"
+  }
+}

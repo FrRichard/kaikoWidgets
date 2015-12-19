@@ -1,0 +1,23 @@
+{
+  "name": "artisout-webserver",
+  "preferGlobal": "false",
+  "version": "0.1.0",
+  "author": "frrichard",
+  "description": "",
+  "contributors": [],
+  "engines": {
+    "node": "~0.10.24",
+    "npm": "~1.3.2"
+  },
+  "keywords": [
+    "webapp",
+    "server",
+    "proxy"
+  ],
+  "dependencies": {
+    "express": "*",
+    "node-mysql": "^0.4.2",
+    "underscore": "*"
+  },
+  "devDependencies": {}
+}
