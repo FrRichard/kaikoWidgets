@@ -58,8 +58,8 @@ require.config({
 });
 
 require([
-  'appView', 'router', 'jquery', 'backbone', 'lodash'
-], function(AppView, Router){
+  'jquery', 'backbone', 'lodash', 'router', 
+], function( $, Backbone, _, Router){
    	new Router();
 	Backbone.history.start();
 });

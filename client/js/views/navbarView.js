@@ -6,13 +6,12 @@ define('navbarView',['text!/client/js/views/templates/navbarTemplate.html','kaik
 		},
 
 		render:  function() {
-			var template = _.template( navbarTemplate);
+			var template = _.template(navbarTemplate);
 			this.$el.append(template);
 			this.setClickEvent();
 		},
 
 		setClickEvent: function() {
-
 			$('#navbar a').click(function(e) {
 				$('#navbar a').removeClass('selectedNavbar');
 				$(e.target).toggleClass('selectedNavbar');

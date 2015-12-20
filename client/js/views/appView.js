@@ -2,18 +2,25 @@ define('appView',[
 	'kaikoWebsocket',
 	'grid',
 	'navbarView',
-	] , function(KaikoWebsocket, Grid, NavbarView ) {	
+	'tradeView',
+	'tradeModel'
+	] , function(KaikoWebsocket, Grid, NavbarView, TradeView, TradeModel ) {	
 	var app = Backbone.View.extend({
 		initialize: function() {
-			// init navbar
-			var navbarView = new NavbarView();
-			navbarView.render();
+			//init Grid
+			Grid('trading');
 			//init websocket
 			KaikoWebsocket();
+			// init navbar
+			this.navbarView = new NavbarView();
+
+			var tradeView = new TradeView();
+
 		},
 
 		render: function(type) {
 			//init Grid
+			this.navbarView.render();
 			Grid(type);
 
 		}

@@ -1,0 +1,27 @@
+<div id="kaikowidget_trade">
+	<!-- <h1> Real Time Trades </h1> -->
+	<h3> 
+		<span id="kaikowidget_trade_exchange">  </span>
+		<span id="kaikowidget_trade_symbol"> </span>
+	</h3>
+	<select id="exchangeSwitch" onchange="exchangeSwitch()">
+		<option value="bitstamp"> Bitstamp </option>
+		<option value="huobi"> Huobi </option>
+		<option value="coinbase"> Coinbase </option>
+		<option value="bitfinex"> Bitfinex </option>
+		<option value="btcchina"> Btcchina </option>
+	</select>
+	<table id="kaikowidget_trade_table" >
+		<thead>
+			<th> Amount </th>
+			<th> Price  </th>
+			<th> Time		</th>
+		</thead>
+		<tbody id="kaikowidget_trade_list" >
+		</tbody>
+	</table>
+</div>
+<script src="../client/js/embeddableWidgets/kaikoWebsocket.js"></script>
+<script src="../client/js/embeddableWidgets/trades/embTrades.js"></script>
+<link rel='stylesheet' type='text/css' href='../client/style/widgets/trades.css'/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">

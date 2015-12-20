@@ -1,0 +1,26 @@
+#kaikowidget_trade {
+
+}
+
+#kaikowidget_trade_table {
+	max-width: 100px;
+	background: gray;
+	border-collapse: separate;
+	border-spacing: 20px 0;
+}
+
+#kaikowidget_trade_table td {
+	/*padding: 10px 0;*/
+}
+
+#kaikowidget_trade_list > thead {
+	color: red;
+}
+
+.fa-caret-down {
+	color: red;
+}
+
+.fa-caret-up {
+	color: green;
+}

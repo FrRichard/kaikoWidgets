@@ -4,16 +4,25 @@ define('tradeView',[
 	], function(TradeViewTemplate, TradeModel) {
 
 	var trade = Backbone.View.extend({
-		el:$('#trade'),	
+		el:$('#trades'),
+		template: _.template(TradeViewTemplate),
 		initialize: function() {
-
+			var self = this;
+			this.tradeModel = new TradeModel();
+			this.tradeModel.on('change', this.onChange.bind(this));
 		},
 
-		render: function() {
+		render: function(newTrade) {
+			$('#trades').html(this.template(newTrade));
+		},
 
+		onChange: function(newTrade) {
+			this.newTrade = newTrade.toJSON();
+			console.log(this.newTrade);
+			this.render(this.newTrade);
 		}
 
 	})
 
-
+	return trade;
 });

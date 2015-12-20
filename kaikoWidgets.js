@@ -8,8 +8,8 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, '/client','embbedHereView.html'));
 });
 
-app.get('/tradeview', function(req, res) {
-	res.sendFile(path.join(__dirname, '/client/js/views/widgets/tradeView/tradeViewTemplate.html'));
+app.get('/trades', function(req, res) {
+	res.sendFile(path.join(__dirname, '/client/js/embeddableWidgets/trades/embTrades.html'));
 }); 
 
 // app.get('*', function(req, res) {

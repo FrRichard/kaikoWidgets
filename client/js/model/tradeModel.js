@@ -1,8 +1,17 @@
-define('tradeModel', [], function() {
+define('tradeModel', ['kaikoWebsocket'], function(ws) {
 	
 	var tradeModel = Backbone.Model.extend({
 		initialize: function() {
-
+			var self = this;
+			// console.log(KaikoWebsocket().KaikoWebsocket.onmessage);
+			ws().KaikoWebsocket.addEventListener('message', function(event) {
+				var parsedData = JSON.parse(event.data);
+				// console.log(parsedData);
+				if(parsedData.channel == "trades") {
+					self.set(parsedData);
+					// console.log(parsedData);
+				}
+			});
 		},
 
 		defaults :  {
