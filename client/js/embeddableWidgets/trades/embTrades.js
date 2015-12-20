@@ -1,15 +1,22 @@
 
 var kaikoWebsocket = wsChannel();
-var lastTrades = [];
 var tableStructure = '';
 var max = 10;
+var lastTrades = [];
 var currentExchange = ['huobi'];
 var selectedExchange = {
 	get current () {
 		if(currentExchange.length == 0) return undefined;
-		return currentExchange[0]
+		return currentExchange[0];
 	}
 }
+
+// get the last 10trades
+getLasttrades('bitstamp','btcusd', max, 
+	function(trades) { 
+		lastTrades = trades; 
+		updateDOM(trades);
+	});
 
 kaikoWebsocket.addEventListener('message', function(event) {
 	var exchange = selectedExchange.current;
@@ -48,7 +55,11 @@ function updateDOM(trades) {
 }
 
 function formatDate(timestamp) {
-	var date = new Date(timestamp);
+	if(!timestamp) {
+		var date = new Date();
+	} else {
+		var date = new Date(timestamp);
+	}
 	var hours = date.getHours();
 	var minutes = "0" + date.getMinutes();
 	var seconds = "0" + date.getSeconds();
@@ -70,10 +81,11 @@ function exchangeSwitch() {
 	lastTrades = [];
 }
 
-function cleanDom(trades) {
+function cleanDOM(trades) {
 	trades.forEach(function(trade,i) {
 		document.getElementById('kaikowidget_trade_amount'+i).innerHTML = "";
 		document.getElementById('kaikowidget_trade_price'+i).innerHTML = "";
-		document.getElementById('kaikowidget_trade_date'+i).innerHTML = ""
+		document.getElementById('kaikowidget_trade_date'+i).innerHTML = "";
+		document.getElementById('kaikowidget_trade_buysell'+i).className = "";
 	})
 }
