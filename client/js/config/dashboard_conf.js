@@ -27,11 +27,23 @@ define('dashboard_conf', [], function() {
 		},
 
 		mining: {
-
+			stats: {
+				id: 'mining_stats',
+				width: 6,
+				height: 4,
+				col: 0,
+				row: 0,
+			}
 		},
 
 		blockchain : {
-
+			stats:{
+				id: 'blockchain_stats',
+				width: 2,
+				height: 8,
+				col: 4,
+				row: 0
+			}
 		}
 
 	}

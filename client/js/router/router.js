@@ -2,16 +2,12 @@ define('router',[
 	'backbone',
 	'jquery',
 	'lodash',
-	'Grid',
-	'navbarView'
-	] , function(Backbone, $, _, Grid, NavbarView) {
+	'appView'
+	] , function(Backbone, $, _, AppView) {
 
 	var Router = Backbone.Router.extend({
 		initialize: function() {
-			console.log('router initialize Grid', Grid());
-			// init navbar
-			var navbarView = new NavbarView();
-			navbarView.render();
+			this.appView =	new AppView();	
 		},
 
 		routes: {
@@ -22,30 +18,33 @@ define('router',[
 		type: function(param) {
 			// console.log(param);
 			switch(param) {
-				case "mining":
-					this.mining();
+				case 'mining':
+					this.mining('mining');
 					break;
-				case "blockchain":
-					this.blockchain();
+				case 'blockchain':
+					this.blockchain('blockchain');
 					break;
-				case "trading":
-					this.trading();
+				case 'trading':
+					this.trading('trading');
 					break;
 				default:
-					this.trading();
+					this.trading('trading');
 			}
 		},
 
-		blockchain: function() {
+		blockchain: function(param) {
 			console.log('route to blockchain!');
+			this.appView.render(param);
 		},
 
-		mining: function() {
+		mining: function(param) {
 			console.log('route to mining!');
+			this.appView.render(param);
 		},
 
-		trading: function() {
+		trading: function(param) {
 			console.log('route to trading!');
+			this.appView.render(param);
 		}
 	});
 	

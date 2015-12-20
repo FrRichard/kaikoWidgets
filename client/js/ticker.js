@@ -5,7 +5,7 @@ var Channel = {
   "type": "subscribe",
   "exchanges": [
     // { "name": "bitfinex", "channels": ["ticker", "trades", "orderbook"] }
-    { "name": "bitstamp", "channels": ["ticker", "trades", "orderbook"] },
+    { "name": "bitstamp", "channels": ["ticker"] },
     // { "name": "btcchina", "channels": ["ticker", "trades", "orderbook"] },
     // { "name": "coinbase", "channels": ["ticker", "trades", "orderbook"] },
     // { "name": "huobi", "channels": ["ticker", "trades", "orderbook"] }

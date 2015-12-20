@@ -1,7 +1,4 @@
-// Filename: main.js
 
-// Require.js allows us to configure shortcut alias
-// There usage will become more apparent further along in the tutorial.
 require.config({
 	paths: {
 		//conf
@@ -20,12 +17,19 @@ require.config({
 		router: '/client/js/router/router',
 
 		//dashboard
-		grid: '/client/js/Grid',
+		grid: '/client/js/grid',
+
+		//websocket
+		kaikoWebsocket: '/client/js/websocket/kaikoWebsocket',
 
 		//views
+		appView: '/client/js/views/appView',
 		navbarView: '/client/js/views/navbarView',
+		//widget views
+		tradeView: '/client/js/views/widgets/tradeView/tradeView',
 
 		//models
+		tradeModel: '/client/js/model/tradeModel',
 
 
 		//collections
@@ -45,10 +49,6 @@ require.config({
 	    "jquery": {
 	    	exports: "$"
 	    },
-	    // "jquery-ui": {
-	    // 	deps: ['jquery'],
-	    // 	exports: "jquery-ui"
-	    // },
 	    "gridstack": {
 	    	deps: ['jquery','underscore'],
 	    	exports: "Gridstack"
@@ -58,10 +58,8 @@ require.config({
 });
 
 require([
-  'app', 'jquery', 'backbone', 'lodash'
-], function(App){
-  // The "app" dependency is passed in as "App"
-   // var app = new App();
-   App.initialize();
-   console.log(App);
+  'appView', 'router', 'jquery', 'backbone', 'lodash'
+], function(AppView, Router){
+   	new Router();
+	Backbone.history.start();
 });
