@@ -12,11 +12,8 @@ var wsChannel = function () {
 		};
 
 		KaikoWebsocket.onopen = function(event) {
-			console.log("kaikoWebsocket is Open");
 			KaikoWebsocket.send(JSON.stringify(Channel));
 		}
 
 		return KaikoWebsocket;
 };
-
-console.log("kaikoWebsocket is LOADED!");

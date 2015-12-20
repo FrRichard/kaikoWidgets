@@ -23,11 +23,9 @@ kaikoWebsocket.addEventListener('message', function(event) {
 	var exchange = selectedExchange.current;
 	var parsedData = JSON.parse(event.data);
 	if(parsedData.channel == 'trades' && parsedData.exchange == exchange) {
-		console.log(parsedData);
 		if(lastTrades.length >= max) {
 			lastTrades.pop(parsedData);
 		} 
-		console.log(parsedData.exchange);
 		lastTrades.unshift(parsedData);
 		updateDOM(lastTrades);
 	}
