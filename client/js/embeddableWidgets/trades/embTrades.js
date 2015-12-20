@@ -11,17 +11,19 @@ var selectedExchange = {
 	}
 }
 
-// get the last 10trades
-getLasttrades('bitstamp','btcusd', max, 
-	function(trades) { 
+function updateLastTrades(trades) {
 		lastTrades = trades; 
 		updateDOM(trades);
-	});
+}
+
+// get the last 10trades
+getLasttrades(currentExchange[0], getDefaultPair(currentExchange[0]), max, updateLastTrades);
 
 kaikoWebsocket.addEventListener('message', function(event) {
 	var exchange = selectedExchange.current;
 	var parsedData = JSON.parse(event.data);
 	if(parsedData.channel == 'trades' && parsedData.exchange == exchange) {
+		console.log(parsedData);
 		if(lastTrades.length >= max) {
 			lastTrades.pop(parsedData);
 		} 
@@ -36,7 +38,6 @@ kaikoWebsocket.addEventListener('message', function(event) {
 		tableStructure += '<tr><td class=kaikowidget_trade_amount id=kaikowidget_trade_amount'+i+'> </td><td class=kaikowidget_trade_price id=kaikowidget_trade_price'+i+'>' + 
 		'</td><td class=kaikowidget_trade_date id=kaikowidget_trade_date'+i+'> </td> <td class=kaikowidget_trade_buysell> <i id=kaikowidget_trade_buysell'+i+'> </i> </td> </tr>';
 	}
-
 	document.getElementById('kaikowidget_trade_list').innerHTML = tableStructure;
 })();
 
@@ -79,6 +80,7 @@ function exchangeSwitch() {
 	//clean former exchange trades
 	cleanDOM(lastTrades);
 	lastTrades = [];
+	getLasttrades(currentExchange[0], getDefaultPair(currentExchange[0]), max)
 }
 
 function cleanDOM(trades) {
