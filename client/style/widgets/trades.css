@@ -1,12 +1,28 @@
+body {
+	margin:0;
+}
 #kaikowidget_trade {
-
+	background: #17242D;
+	min-height:200px;
 }
 
+#kaikowidget_trade_table {table-layout:fixed; width:250px;}
+#kaikowidget_trade_table td {overflow:hidden;}
+#kaikowidget_trade_table td:nth-of-type(1) {width:40px;}
+#kaikowidget_trade_table td:nth-of-type(2) {width:40px;}
+#kaikowidget_trade_table td:nth-of-type(3) {width:40px;}
+#kaikowidget_trade_table td:nth-of-type(4) {width:40px; padding-left:1em;}
+
 #kaikowidget_trade_table {
-	max-width: 100px;
-	background: gray;
-	border-collapse: separate;
-	border-spacing: 20px 0;
+	margin-left: 1em;
+	color: white;
+	/*border-collapse: separate;
+	/*border-spacing: 10px 0;*/
+}
+
+#kaikowidget_trade_table th {
+	text-align: left;
+	font-size: 0.8em;
 }
 
 #kaikowidget_trade_table td {
@@ -17,10 +33,34 @@
 	color: red;
 }
 
+#exchangeSwitch {
+	width: 100px;
+	margin-top: 1em;
+	margin-left: 1em;
+	background: white;
+	color: #004756;
+	border: 0.5px solid;
+	border-color: rgb(169, 169, 169 );
+}
+
+#poweredbykaiko {
+	float:right;
+	margin-top: 1em;
+	margin-right: 1em;
+}
+
+.down {
+	color: #c0392b;
+}
+
+.up {
+	color: #a0b457;
+}
+
 .fa-caret-down {
-	color: red;
+	color: #c0392b;
 }
 
 .fa-caret-up {
-	color: green;
+	color: #a0b457;
 }

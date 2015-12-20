@@ -44,30 +44,41 @@ kaikoWebsocket.addEventListener('message', function(event) {
 function updateDOM(trades) {
 	trades.forEach(function(trade, i) {
 		var tradeDate = formatDate(trade.data.timestamp);
-		document.getElementById('kaikowidget_trade_amount'+i).innerHTML = trade.data.amount;
-		document.getElementById('kaikowidget_trade_price'+i).innerHTML = trade.data.price;
+		var tradeAmount = formatPrice(trade.data.amount);
+		var tradePrice = formatPrice(trade.data.price);
+		document.getElementById('kaikowidget_trade_amount'+i).innerHTML = tradeAmount;
+		document.getElementById('kaikowidget_trade_price'+i).innerHTML = tradePrice;
 		document.getElementById('kaikowidget_trade_date'+i).innerHTML = tradeDate;
 		if(trade.data.sell) {
 			document.getElementById('kaikowidget_trade_buysell'+i).className = 'fa fa-caret-down';
+			document.getElementById('kaikowidget_trade_price'+i).className = 'down';
 		} else {
 			document.getElementById('kaikowidget_trade_buysell'+i).className = 'fa fa-caret-up';
+			document.getElementById('kaikowidget_trade_price'+i).className = 'up';
+
 		}
 	})
 }
 
-function formatDate(timestamp) {
-	if(!timestamp) {
-		var date = new Date();
-	} else {
-		var date = new Date(timestamp);
-	}
-	var hours = date.getHours();
-	var minutes = "0" + date.getMinutes();
-	var seconds = "0" + date.getSeconds();
+// function formatDate(timestamp) {
+// 	if(!timestamp) {
+// 		var date = new Date();
+// 	} else {
+// 		var date = new Date(timestamp);
+// 	}
+// 	var hours = date.getHours();
+// 	var minutes = "0" + date.getMinutes();
+// 	var seconds = "0" + date.getSeconds();
 
-	formattedDate = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
-	return formattedDate;
-}
+// 	formattedDate = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+// 	return formattedDate;
+// }
+
+// function formatPrice(price) {
+// 	//limit 2 decimal
+// 	var price = Math.floor(price*100)/100;
+// 	return price;
+// }
 
 function getExchangename(exchange) {
 	this.exchange = exchange;
@@ -80,7 +91,7 @@ function exchangeSwitch() {
 	//clean former exchange trades
 	cleanDOM(lastTrades);
 	lastTrades = [];
-	getLasttrades(currentExchange[0], getDefaultPair(currentExchange[0]), max)
+	getLasttrades(currentExchange[0], getDefaultPair(currentExchange[0]), max, updateLastTrades);
 }
 
 function cleanDOM(trades) {
