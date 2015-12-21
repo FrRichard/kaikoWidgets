@@ -1,8 +1,9 @@
 define('tradeView',[
 	'text!/client/js/views/widgets/tradeView/tradeViewTemplate.html',
 	'text!/client/js/views/widgets/tradeView/tradeViewWrapper.html',
-	'tradeModel','tradeCollection'
-	], function(TradeViewTemplate, TradeViewWrapper, TradeModel, TradeCollection) {
+	'tradeModel','tradeCollection',
+	'parameterManager'
+	], function(TradeViewTemplate, TradeViewWrapper, TradeModel, TradeCollection, ParameterManager) {
 
 	var trade = Backbone.View.extend({
 		el:'#trades',
@@ -19,6 +20,7 @@ define('tradeView',[
 			// this.tradeModel.on('change', this.onChange.bind(this));
 			this.tradeCollection = new TradeCollection();
 			this.tradeCollection.on('update', this.onChange.bind(this));
+			this.tradeCollection.start();
 
 		},
 
@@ -27,7 +29,13 @@ define('tradeView',[
 		},
 
 		render: function(newTrades) {
-			$('#kaikowidget_trade_table thead').append(this.template({data:newTrades}));
+			if($('#kaikowidget_trade_list tr').length <= 10) {
+				$('#kaikowidget_trade_list').append(this.template({data:newTrades}));
+			} else {
+				$('#kaikowidget_trade_list tr')[$('#kaikowidget_trade_list tr').length-1].remove();
+								$('#kaikowidget_trade_list').append(this.template({data:newTrades}));
+
+			}
 		},
 
 		onChange: function(newTrade) {
@@ -35,8 +43,9 @@ define('tradeView',[
 			this.render(this.newTrades);
 		},
 
-		exchangeSwitch: function() {
-			console.log('SWITCH!');
+		exchangeSwitch: function(e) {
+			var exchange = e.target.value;
+			ParameterManager.setTradesExchange(exchange);
 		}
 
 	})
