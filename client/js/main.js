@@ -1,9 +1,6 @@
 
 require.config({
 	paths: {
-		//conf
-		dashboard_conf: '../../client/js/config/dashboard_conf',
-
 		//libs
 		jquery: '../../bower_components/jquery/dist/jquery.min',
 		// "jquery-ui": '../bower_components/jquery-ui/jquery-ui.min',
@@ -12,6 +9,12 @@ require.config({
 		underscore: '../../bower_components/underscore/underscore-min',
 		gridstack: '../../libs/gridstack/dist/gridstack',
 		text: '../../bower_components/text/text',
+
+		//conf
+		dashboard_conf: '/client/js/config/dashboard_conf',
+
+		//helpers
+		formatUtils: '/client/js/helpers/formatUtils',
 
 		// router
 		router: '/client/js/router/router',
