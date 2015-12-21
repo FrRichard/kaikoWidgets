@@ -55,6 +55,13 @@ define('tradeView',[
 				trade.data.amount = self.formatUtils.formatPrice(trade.data.amount);
 				trade.data.price = self.formatUtils.formatPrice(trade.data.price);
 				trade.data.date = self.formatUtils.formatDate(trade.data.timestamp);
+				if(trade.data.sell) {
+					trade.data.arrow = "fa fa-caret-down";
+					trade.data.type = "up";
+				} else {
+					trade.data.arrow = "fa fa-caret-up";
+					trade.data.type = 'down';
+				}
 			});
 			// console.log(newTrades);
 			return newTrades;

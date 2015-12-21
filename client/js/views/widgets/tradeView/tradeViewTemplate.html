@@ -2,7 +2,8 @@
 <% data.forEach(function(trade) { %>
 	<tr> 
 		<td>  <%=trade.data.amount%> </td> 
-		<td> <%=trade.data.price%> </td> 
-		<td> <%=trade.data.date%> </td> 
+		<td class='<%=trade.data.type%>'> <%=trade.data.price%> </td> 
+		<td > <%=trade.data.date%> </td> 
+		<td class='kaikowidget_trade_buysell'> <i class='<%=trade.data.arrow%>'> </i></td> 
 	</tr>
 <%})%>
