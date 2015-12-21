@@ -46,6 +46,7 @@ define('tradeView',[
 		exchangeSwitch: function(e) {
 			var exchange = e.target.value;
 			ParameterManager.setTradesExchange(exchange);
+			this.tradeCollection.start();
 		}
 
 	})
