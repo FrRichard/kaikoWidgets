@@ -12,6 +12,7 @@ require.config({
 
 		//conf
 		dashboard_conf: '/client/js/config/dashboard_conf',
+		apiConf: '/client/js/config/apiConf',
 
 		//helpers
 		formatUtils: '/client/js/helpers/formatUtils',

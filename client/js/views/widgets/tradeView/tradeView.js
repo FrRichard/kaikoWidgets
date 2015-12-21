@@ -17,7 +17,8 @@ define('tradeView',[
 		initialize: function() {
 			var self = this;
 			this.preRender();
-			// this.tradeModel = new TradeModel();
+			this.tradeModel = new TradeModel();
+			this.tradeModel.fetch();
 			// this.tradeModel.on('change', this.onChange.bind(this));
 			this.tradeCollection = new TradeCollection();
 			this.tradeCollection.on('update', this.onUpdate.bind(this));
