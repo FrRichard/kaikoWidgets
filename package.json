@@ -17,10 +17,10 @@
   "dependencies": {
     "express": "*",
     "node-mysql": "^0.4.2",
+    "request": "^2.67.0",
     "underscore": "*"
   },
   "devDependencies": {},
-
   "scripts": {
     "start": "node kaikoWidgets.js"
   }

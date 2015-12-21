@@ -17,7 +17,14 @@ define('tradeView',[
 		initialize: function() {
 			var self = this;
 			this.preRender();
-			this.tradeModel = new TradeModel();
+
+			var params = {
+				exchange: ParameterManager.trades.currentExchange,
+				pair: ParameterManager.trades.currentPair
+			}
+
+
+			this.tradeModel = new TradeModel(params);
 			this.tradeModel.fetch();
 			// this.tradeModel.on('change', this.onChange.bind(this));
 			this.tradeCollection = new TradeCollection();
