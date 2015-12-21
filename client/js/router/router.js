@@ -1,9 +1,4 @@
-define('router',[
-	'backbone',
-	'jquery',
-	'lodash',
-	'appView'
-	] , function(Backbone, $, _, AppView) {
+define('router',['appView'] , function(AppView) {
 
 	var Router = Backbone.Router.extend({
 		initialize: function() {

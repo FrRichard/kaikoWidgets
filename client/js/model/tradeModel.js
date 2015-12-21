@@ -1,10 +1,10 @@
-define('tradeModel', ['kaikoWebsocket'], function(ws) {
+define('tradeModel', ['kaikoWebsocket', 'tradeCollection'], function(ws) {
 	
 	var tradeModel = Backbone.Model.extend({
 		initialize: function() {
 			var self = this;
 			// console.log(KaikoWebsocket().KaikoWebsocket.onmessage);
-			ws().KaikoWebsocket.addEventListener('message', function(event) {
+			ws.KaikoWebsocket.addEventListener('message', function(event) {
 				var parsedData = JSON.parse(event.data);
 				// console.log(parsedData);
 				if(parsedData.channel == "trades") {

@@ -1,6 +1,5 @@
 define('grid', ['gridstack','dashboard_conf'], function(Gridstack, Conf) {
 	var grid = function(type) {
-
 		var options = {
 	  			width: 12,
                 always_show_resize_handle: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
@@ -21,10 +20,8 @@ define('grid', ['gridstack','dashboard_conf'], function(Gridstack, Conf) {
 	    		widget.height
 	    	);
 	    });
-	    $('#trades').html('aaa');
+	 
 	}
-
-
 
 	return grid;
 });

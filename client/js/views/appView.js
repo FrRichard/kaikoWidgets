@@ -9,19 +9,16 @@ define('appView',[
 		initialize: function() {
 			//init Grid
 			Grid('trading');
-			//init websocket
-			KaikoWebsocket();
-			// init navbar
+				// init navbar
 			this.navbarView = new NavbarView();
+			this.navbarView.render();
 
 			var tradeView = new TradeView();
-
 		},
 
 		render: function(type) {
-			//init Grid
-			this.navbarView.render();
-			Grid(type);
+			// //update Grid
+			// Grid(type);
 
 		}
 	});

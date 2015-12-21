@@ -22,6 +22,9 @@ require.config({
 		//websocket
 		kaikoWebsocket: '/client/js/websocket/kaikoWebsocket',
 
+		//manager
+		parameterManager: '/client/js/manager/parameterManager',
+
 		//views
 		appView: '/client/js/views/appView',
 		navbarView: '/client/js/views/navbarView',
@@ -31,9 +34,8 @@ require.config({
 		//models
 		tradeModel: '/client/js/model/tradeModel',
 
-
 		//collections
-
+		tradeCollection: '/client/js/collections/tradeCollection',
 
 	},
 

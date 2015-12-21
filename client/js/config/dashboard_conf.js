@@ -19,7 +19,8 @@ define('dashboard_conf', [], function() {
 
 			trades: {
 				id: 'trades',
-				width: 4,
+				width: 3,
+				height:4,
 				col: 9,
 				row: 0
 			}

@@ -1,25 +1,42 @@
 define('tradeView',[
 	'text!/client/js/views/widgets/tradeView/tradeViewTemplate.html',
-	'tradeModel'
-	], function(TradeViewTemplate, TradeModel) {
+	'text!/client/js/views/widgets/tradeView/tradeViewWrapper.html',
+	'tradeModel','tradeCollection'
+	], function(TradeViewTemplate, TradeViewWrapper, TradeModel, TradeCollection) {
 
 	var trade = Backbone.View.extend({
-		el:$('#trades'),
+		el:'#trades',
 		template: _.template(TradeViewTemplate),
-		initialize: function() {
-			var self = this;
-			this.tradeModel = new TradeModel();
-			this.tradeModel.on('change', this.onChange.bind(this));
+
+		events: {
+			'click #exchangeSwitch':'exchangeSwitch'
 		},
 
-		render: function(newTrade) {
-			$('#trades').html(this.template(newTrade));
+		initialize: function() {
+			var self = this;
+			this.preRender();
+			// this.tradeModel = new TradeModel();
+			// this.tradeModel.on('change', this.onChange.bind(this));
+			this.tradeCollection = new TradeCollection();
+			this.tradeCollection.on('update', this.onChange.bind(this));
+
+		},
+
+		preRender: function() {
+			this.$el.html(_.template(TradeViewWrapper));
+		},
+
+		render: function(newTrades) {
+			$('#kaikowidget_trade_table thead').append(this.template({data:newTrades}));
 		},
 
 		onChange: function(newTrade) {
-			this.newTrade = newTrade.toJSON();
-			console.log(this.newTrade);
-			this.render(this.newTrade);
+			this.newTrades = newTrade.toJSON();
+			this.render(this.newTrades);
+		},
+
+		exchangeSwitch: function() {
+			console.log('SWITCH!');
 		}
 
 	})
