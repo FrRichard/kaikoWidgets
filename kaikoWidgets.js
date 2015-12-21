@@ -13,7 +13,9 @@ var ApiProxy = require(webapp_server_path + '/ApiProxy');
 app.use(express.static(__dirname, +'/client'));
 
 var params = {
-	app: app
+	app: app,
+	webapp_server_path: webapp_server_path,
+	webapp_client_path: webapp_client_path
 }
 
 // init app routes
