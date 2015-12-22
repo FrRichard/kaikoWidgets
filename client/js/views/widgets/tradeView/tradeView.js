@@ -25,8 +25,14 @@ define('tradeView',[
 
 
 			this.tradeModel = new TradeModel(params);
-			this.tradeModel.fetch();
-			// this.tradeModel.on('change', this.onChange.bind(this));
+			this.tradeModel.fetch({
+				success: function(response, model) {
+					var model = self.tradeModel.parse(model);
+					this.newTrades = self.formatTrade(model);
+					self.render(this.newTrades);
+				}
+			});
+			// this.tradeModel.on('change', this.onUpdate.bind(this));
 			this.tradeCollection = new TradeCollection();
 			this.tradeCollection.on('update', this.onUpdate.bind(this));
 			this.formatUtils = new FormatUtils();
@@ -53,7 +59,6 @@ define('tradeView',[
 		},
 
 		cleanView: function() {
-			console.log("cleanView");
 			$('#kaikowidget_trade_list').html('');
 		},
 
@@ -71,7 +76,6 @@ define('tradeView',[
 					trade.data.type = 'down';
 				}
 			});
-			// console.log(newTrades);
 			return newTrades;
 		},
 
@@ -80,7 +84,17 @@ define('tradeView',[
 			ParameterManager.setTradesExchange(exchange);
 			this.cleanView();
 			this.tradeCollection.restart();
+		},
+
+		isJson: function(str) {
+		    try {
+		        JSON.parse(str);
+		    } catch (e) {
+		        return false;
+		    }
+		    return true;
 		}
+
 
 	})
 

@@ -23,7 +23,7 @@ ApiProxy.prototype.init = function(callback) {
 				console.log('error fetching trades', error);
 				res.send(500, 'Something went wrong while fetching trades');
 			} else {
-				console.log(body);
+				res.status('200').send(body);
 			}
 		}
 
