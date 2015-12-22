@@ -15,15 +15,21 @@ define('tradeView',[
 		},
 
 		initialize: function() {
-			var self = this;
 			this.preRender();
-
 			var params = {
 				exchange: ParameterManager.trades.currentExchange,
 				pair: ParameterManager.trades.currentPair
 			}
 
+			this.getLastTrades(params);
 
+			this.tradeCollection = new TradeCollection();
+			this.tradeCollection.on('update', this.onUpdate.bind(this));
+			this.formatUtils = new FormatUtils();
+		},
+
+		getLastTrades: function(params) {
+			var self = this;
 			this.tradeModel = new TradeModel(params);
 			this.tradeModel.fetch({
 				success: function(response, model) {
@@ -32,10 +38,6 @@ define('tradeView',[
 					self.render(this.newTrades);
 				}
 			});
-			// this.tradeModel.on('change', this.onUpdate.bind(this));
-			this.tradeCollection = new TradeCollection();
-			this.tradeCollection.on('update', this.onUpdate.bind(this));
-			this.formatUtils = new FormatUtils();
 		},
 
 		preRender: function() {
@@ -46,8 +48,8 @@ define('tradeView',[
 			if($('#kaikowidget_trade_list tr').length <= 10) {
 				$('#kaikowidget_trade_list').prepend(this.template({data:newTrades}));
 			} else {
-				$('#kaikowidget_trade_list tr')[$('#kaikowidget_trade_list tr').length-1].remove();
-								$('#kaikowidget_trade_list').prepend(this.template({data:newTrades}));
+				$('#kaikowidget_trade_list tr').slice(10).remove();
+				$('#kaikowidget_trade_list').prepend(this.template({data:newTrades}));
 
 			}
 		},
@@ -70,10 +72,10 @@ define('tradeView',[
 				trade.data.date = self.formatUtils.formatDate(trade.data.timestamp);
 				if(trade.data.sell) {
 					trade.data.arrow = "fa fa-caret-down";
-					trade.data.type = "up";
+					trade.data.type = 'down';
 				} else {
 					trade.data.arrow = "fa fa-caret-up";
-					trade.data.type = 'down';
+					trade.data.type = "up";
 				}
 			});
 			return newTrades;
@@ -83,6 +85,11 @@ define('tradeView',[
 			var exchange = e.target.value;
 			ParameterManager.setTradesExchange(exchange);
 			this.cleanView();
+			params = {
+				exchange: ParameterManager.trades.currentExchange,
+				pair: ParameterManager.trades.currentPair
+			}
+			this.getLastTrades(params);
 			this.tradeCollection.restart();
 		},
 

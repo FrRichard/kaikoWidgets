@@ -10,8 +10,10 @@ define('tradeModel', ['kaikoWebsocket', 'apiConf'], function(ws, ApiConf) {
 		parse: function(response) {
 			var self = this
 			var trades = response.slice(0,10);
+			console.log('traaades', trades);
 			var res = [];
 			_.each(trades, function(trade) {
+				trade.timestamp = parseInt(trade.timestamp);
 				var t = {
 					exchange: self.params.exchange,
 					channel: 'trades',
@@ -19,7 +21,7 @@ define('tradeModel', ['kaikoWebsocket', 'apiConf'], function(ws, ApiConf) {
 				};
 				res.push(t);
 			});
-			console.log("reeeees", res);
+		
 			return res
 		}
 
