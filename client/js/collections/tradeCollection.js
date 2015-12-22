@@ -22,7 +22,6 @@ define('tradeCollection', ['kaikoWebsocket','parameterManager'], function(ws, Pa
 		},
 
 		restart: function() {
-			console.log('restart');
 			var self = this;
 			this.reset();			
 		}
