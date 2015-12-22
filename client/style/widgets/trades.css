@@ -1,6 +1,21 @@
 body {
 	margin:0;
 }
+
+#embedtrades {
+	padding: 0.5em 0 0.3em 1em;
+	background: #1D1C1B;
+	color: white;
+	font-weight: 900;
+	font-size: 0.9em;
+}
+
+
+#embedtrades textarea {
+	width:250px;
+	height:1em;
+}
+
 #kaikowidget_trade {
 	background: #17242D;
 	min-height:200px;

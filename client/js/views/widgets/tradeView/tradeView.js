@@ -11,7 +11,9 @@ define('tradeView',[
 		template: _.template(TradeViewTemplate),
 
 		events: {
-			'click #exchangeSwitch':'exchangeSwitch'
+			'click #exchangeSwitch':'exchangeSwitch',
+			'click  #embedtrades': 'showTradesEmbed',
+			'focusout #embedtrades': 'hideTradesEmbed'
 		},
 
 		initialize: function() {
@@ -48,9 +50,8 @@ define('tradeView',[
 			if($('#kaikowidget_trade_list tr').length <= 10) {
 				$('#kaikowidget_trade_list').prepend(this.template({data:newTrades}));
 			} else {
-				$('#kaikowidget_trade_list tr').slice(10).remove();
 				$('#kaikowidget_trade_list').prepend(this.template({data:newTrades}));
-
+				$('#kaikowidget_trade_list tr').slice(10).remove();
 			}
 		},
 
@@ -91,6 +92,16 @@ define('tradeView',[
 			}
 			this.getLastTrades(params);
 			this.tradeCollection.restart();
+		},
+
+		showTradesEmbed: function() {
+			$('#embedtrades').html('<textarea id=embedtradestext></textarea>');
+			$('#embedtradestext').text('<iframe src="http://kaikowidgets.herokuapp.com/trades" style="border:none; height:200px; min-height:200px; width:285px; overflow-y:hidden"></iframe>')
+			$('#embedtradestext').focus();
+		},
+
+		hideTradesEmbed: function() {
+			$('#embedtrades').text(' Embed this widget to your page ! ');
 		},
 
 		isJson: function(str) {
