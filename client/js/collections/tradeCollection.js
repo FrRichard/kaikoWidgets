@@ -12,7 +12,7 @@ define('tradeCollection', ['kaikoWebsocket','parameterManager'], function(ws, Pa
 
 		filter: function(parsedData) {
 			if(parsedData.channel == "trades" && parsedData.exchange == ParameterManager.trades.currentExchange) {
-				if(this.length <= this.max) {
+				if(this.length >= this.max) {
 					this.unshift(parsedData);
 				} else {
 					this.pop();
