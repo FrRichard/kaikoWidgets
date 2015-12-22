@@ -5,23 +5,23 @@ define('dashboard_conf', [], function() {
 				id: 'ticker',
 				width:4,
 				height:2,
-				col:0,
+				col:9,
 				row:0,
 			},
 
 			orderbook: {
 				id: 'orderbook',
-				width: 4,
+				width: 5,
 				height: 2,
-				col: 4,
+				col: 3,
 				row: 0
 			},
 
 			trades: {
 				id: 'trades',
 				width: 3,
-				height:4,
-				col: 9,
+				height:2,
+				col: 0,
 				row: 0
 			}
 
