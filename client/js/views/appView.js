@@ -13,12 +13,15 @@ define('appView',[
 			this.navbarView = new NavbarView();
 			this.navbarView.render();
 
-			var tradeView = new TradeView();
 		},
 
 		render: function(type) {
 			// //update Grid
-			// Grid(type);
+			Grid(type);
+			if(type == 'trading')  {
+				var tradeView = new TradeView();
+				
+			}
 
 		}
 	});

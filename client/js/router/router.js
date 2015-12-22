@@ -28,17 +28,14 @@ define('router',['appView'] , function(AppView) {
 		},
 
 		blockchain: function(param) {
-			console.log('route to blockchain!');
 			this.appView.render(param);
 		},
 
 		mining: function(param) {
-			console.log('route to mining!');
 			this.appView.render(param);
 		},
 
 		trading: function(param) {
-			console.log('route to trading!');
 			this.appView.render(param);
 		}
 	});
