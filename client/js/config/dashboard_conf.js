@@ -28,7 +28,7 @@ define('dashboard_conf', [], function() {
 			other: {
 				id: 'other',
 				width: 3,
-				height:4,
+				height: 4,
 				col: 0,
 				row: 3
 			},
