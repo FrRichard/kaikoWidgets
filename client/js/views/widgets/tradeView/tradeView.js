@@ -50,7 +50,6 @@ define('tradeView',[
 			if($('#kaikowidget_trade_list tr').length <= 10) {
 				$('#kaikowidget_trade_list').prepend(this.template({data:newTrades}));
 			} else {
-				console.log("shoudl remove!!");
 				$('#kaikowidget_trade_list').children('tr').slice(10).remove();
 				$('#kaikowidget_trade_list').prepend(this.template({data:newTrades}));
 			}
