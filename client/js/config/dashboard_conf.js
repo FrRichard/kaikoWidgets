@@ -3,9 +3,9 @@ define('dashboard_conf', [], function() {
 		trading: {
 			ticker: {
 				id: 'ticker',
-				width:4,
-				height:2,
-				col:9,
+				width:3,
+				height:3,
+				col:0,
 				row:0,
 			},
 
@@ -20,33 +20,33 @@ define('dashboard_conf', [], function() {
 			trades: {
 				id: 'trades',
 				width: 3,
-				height:3,
-				col: 0,
-				row: 0
-			},
-
-			other: {
-				id: 'other',
-				width: 3,
-				height: 4,
+				height:4,
 				col: 0,
 				row: 3
 			},
 
-			other2: {
-				id: 'other',
-				width: 4,
-				height:2,
-				col: 9,
-				row: 0
-			},
-			other3: {
-				id: 'other',
-				width: 4,
-				height: 3,
-				col: 9,
-				row: 2
-			},
+			// other: {
+			// 	id: 'other',
+			// 	width: 3,
+			// 	height: 4,
+			// 	col: 0,
+			// 	row: 3
+			// },
+
+			// other2: {
+			// 	id: 'other',
+			// 	width: 4,
+			// 	height:2,
+			// 	col: 9,
+			// 	row: 0
+			// },
+			// other3: {
+			// 	id: 'other',
+			// 	width: 4,
+			// 	height: 3,
+			// 	col: 9,
+			// 	row: 2
+			// },
 
 		},
 

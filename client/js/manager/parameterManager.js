@@ -11,6 +11,11 @@ define('parameterManager', [], function() {
 		currentPair : 'btccny'
 	}
 
+	parameterManager.prototype.tickers = {
+		currentExchange: 'btcchina',
+		currentPair: 'btccny'
+	}
+
 
 	parameterManager.prototype.defaultPairs = {
 		bitstamp: 'btcusd',

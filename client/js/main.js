@@ -34,12 +34,15 @@ require.config({
 		navbarView: '/client/js/views/navbarView',
 		//widget views
 		tradeView: '/client/js/views/widgets/tradeView/tradeView',
+		tickerView: '/client/js/views/widgets/tickerView/tickerView',
 
 		//models
 		tradeModel: '/client/js/model/tradeModel',
+		tickerModel: '/client/js/model/tickerModel',
 
 		//collections
 		tradeCollection: '/client/js/collections/tradeCollection',
+		tickerCollection: '/client/js/collections/tickerCollection',
 
 	},
 
