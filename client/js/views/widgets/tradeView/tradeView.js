@@ -11,7 +11,7 @@ define('tradeView',[
 		template: _.template(TradeViewTemplate),
 
 		events: {
-			'click #exchangeSwitch':'exchangeSwitch',
+			'change #tradeSwitch':'exchangeSwitch',
 			'click  #embedtrades': 'showTradesEmbed',
 			'focusout #embedtrades': 'hideTradesEmbed'
 		},

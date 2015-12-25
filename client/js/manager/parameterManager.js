@@ -14,8 +14,6 @@ define('parameterManager', [], function() {
 	parameterManager.prototype.tickers = {
 		currentExchange: 'btcchina',
 		currentPair: 'btccny'
-		// currentExchange: 'bitstamp',
-		// currentPair: 'btcusd'
 	}
 
 
@@ -37,6 +35,13 @@ define('parameterManager', [], function() {
 			currentPair: this.defaultPairs[exchange]
 		}
 	}
+
+	parameterManager.prototype.setTickersExchange = function(exchange) {
+		this.tickers = {
+			currentExchange: exchange,
+			currentPair: this.defaultPairs[exchange]
+		}
+	},
 
 
 	parameterManager.getInstance = function () {
