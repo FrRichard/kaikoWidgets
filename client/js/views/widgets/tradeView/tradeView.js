@@ -26,8 +26,8 @@ define('tradeView',[
 			this.getLastTrades(params);
 
 			this.tradeCollection = new TradeCollection();
-			this.tradeCollection.on('update', this.onUpdate.bind(this));
 			this.formatUtils = new FormatUtils();
+			this.tradeCollection.on('update', this.onUpdate.bind(this));
 		},
 
 		getLastTrades: function(params) {
