@@ -1,0 +1,38 @@
+#embedticker {
+	padding: 0.5em 0 0.3em 1em;
+	background: #1D1C1B;
+	color: white;
+	font-weight: 900;
+	font-size: 0.9em;
+}
+
+
+#embedticker textarea {
+	width:250px;
+	height:1em;
+}
+
+#kaikowidget_ticker_list {
+	list-style-type: none;
+	padding-left: 1em;
+	padding-top: 1em;
+}
+
+#ticker_last {
+	font-size:3em;
+	color:#F7E208;
+}
+
+.volume {
+	color:azure;
+}
+
+#tickerSwitch {
+	width: 100px;
+	margin-top: 1em;
+	margin-left: 1em;
+	background: white;
+	color: #004756;
+	border: 0.5px solid;
+	border-color: rgb(169, 169, 169 );
+}
