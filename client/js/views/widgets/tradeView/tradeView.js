@@ -37,7 +37,7 @@ define('tradeView',[
 				success: function(response, model) {
 					var model = self.tradeModel.parse(model);
 					this.newTrades = self.formatTrade(model);
-					self.render(this.newTrades);
+					self.tradeCollection.add(model);
 				}
 			});
 		},
