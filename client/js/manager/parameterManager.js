@@ -7,13 +7,13 @@ define('parameterManager', [], function() {
 
 	parameterManager.prototype.trades = {
 		//default
-		currentExchange : 'btcchina',
-		currentPair : 'btccny'
+		currentExchange : 'coinbase',
+		currentPair : 'btcusd'
 	}
 
 	parameterManager.prototype.tickers = {
-		currentExchange: 'btcchina',
-		currentPair: 'btccny'
+		currentExchange: 'coinbase',
+		currentPair: 'btcusd'
 	}
 
 

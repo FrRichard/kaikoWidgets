@@ -1,6 +1,8 @@
 @import url('../../libs/gridstack/dist/gridstack.css');
 @import url('/client/style/navbar.css');
 @import url('/client/style/widgets/trades.css');
+@import url('/client/style/widgets/ticker.css');
+
 
 body {
 	background: #2B5988;
