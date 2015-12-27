@@ -12,9 +12,12 @@ define('tradeCollection', ['kaikoWebsocket','parameterManager'], function(ws, Pa
 
 		filter: function(parsedData) {
 			if(parsedData.channel == "trades" && parsedData.exchange == ParameterManager.trades.currentExchange) {
-				if(this.length >= this.max) {
+				// console.log(this.length, this.max, this.length<=this.max);
+				if(this.length < this.max) {
+					// console.log('add');
 					this.unshift(parsedData);
 				} else {
+					console.log('remove and add');
 					this.pop();
 					this.unshift(parsedData);
 				}
@@ -22,6 +25,7 @@ define('tradeCollection', ['kaikoWebsocket','parameterManager'], function(ws, Pa
 		},
 
 		restart: function() {
+			console.log('restart');
 			var self = this;
 			this.reset();			
 		}

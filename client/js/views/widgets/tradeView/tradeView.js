@@ -17,6 +17,8 @@ define('tradeView',[
 		},
 
 		initialize: function() {
+			this.tradeCollection = new TradeCollection();
+			this.formatUtils = new FormatUtils();
 			this.preRender();
 			var params = {
 				exchange: ParameterManager.trades.currentExchange,
@@ -25,8 +27,6 @@ define('tradeView',[
 
 			this.getLastTrades(params);
 
-			this.tradeCollection = new TradeCollection();
-			this.formatUtils = new FormatUtils();
 			this.tradeCollection.on('update', this.onUpdate.bind(this));
 		},
 
@@ -47,12 +47,7 @@ define('tradeView',[
 		},
 
 		render: function(newTrades) {
-			if($('#kaikowidget_trade_list tr').length <= 10) {
-				$('#kaikowidget_trade_list').prepend(this.template({data:newTrades}));
-			} else {
-				$('#kaikowidget_trade_list').children('tr').slice(10).remove();
-				$('#kaikowidget_trade_list').prepend(this.template({data:newTrades}));
-			}
+			$('#kaikowidget_trade_list').html(this.template({data:newTrades}));
 		},
 
 		onUpdate: function(newTrade) {
