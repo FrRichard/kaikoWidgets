@@ -43,12 +43,10 @@ define('tickerView', [
 
 			onUpdate: function(newTicker) {
 				this.newTicker = newTicker.toJSON();
-				console.log(newTicker);
 				this.newTicker[0].data['exchange'] = this.newTicker[0].exchange;
-				this.newTicker[0].data['vol24'] = this.newTicker[0].data.volume;
-				this.newTicker[0].data['item']  = this.newTicker[0].data.symbol.slice(0, 3);
-				this.newTicker[0].data['currency']  = this.newTicker[0].data.symbol.slice(3);
-				console.log('new ticker', this.newTicker[0].data);
+				this.newTicker[0].data['vol24'] = this.formatUtils.formatPrice(this.newTicker[0].data.volume);
+				this.newTicker[0].data['item']  = this.newTicker[0].data.symbol.slice(0, 3).toUpperCase();
+				this.newTicker[0].data['currency']  = this.newTicker[0].data.symbol.slice(3).toUpperCase();
 
 				this.render(this.newTicker[0].data);
 			},
@@ -58,6 +56,10 @@ define('tickerView', [
 				this.tickerModel = new TickerModel(params);
 				this.tickerModel.fetch({
 					success: function(response,model) {
+						model['item']  = model.symbol.slice(0, 3).toUpperCase();
+						model['currency']  = model.symbol.slice(3).toUpperCase();
+						model.vol24 = self.formatUtils.formatPrice(model.vol24);
+
 						self.render(model);
 					}
 				});
