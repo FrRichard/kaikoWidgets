@@ -17,3 +17,10 @@ function formatPrice(price) {
 	var price = Math.floor(price*1000)/1000;
 	return price;
 }
+
+function formatPair(obj) {
+	obj['item'] = obj.symbol.slice(0,3);
+	obj['currency'] = obj.symbol.slice(3);
+
+	return obj;
+}

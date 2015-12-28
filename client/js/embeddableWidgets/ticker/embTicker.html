@@ -1,0 +1,27 @@
+<div id="kaikowidget_ticker">
+	<select id="tickerSwitch" onchange="exchangeSwitch()">
+		<option value="bitstamp"> Bitstamp </option>
+		<option value="huobi" > Huobi </option>
+		<option value="coinbase" selected> Coinbase </option>
+		<option value="bitfinex"> Bitfinex </option>
+		<option value="btcchina" > Btcchina </option>
+	</select>
+	<a target="_blank" href="https://www.kaiko.com">
+		<img id="poweredbykaiko" src="../client/imgs/watermark.png" width='55' height='9'> </img>
+	</a>
+	<section id="kaikowidget_ticker_list" >
+		<div id="ticker_last">  <span id="ticker_currency"></span> </div>
+		<div id="ticker_high" class="up"> High: <%=data.high%> </div>
+		<div id="ticker_low" class="down"> Low: <%=data.low%> </div>
+		<div id="ticker_volume" class="volume"> Volume: <%=data.vol24%> <%=data.item%></div>
+	</section>
+</div>
+
+
+<script src="../client/js/embeddableWidgets/format.js"></script>
+<script src="../client/js/embeddableWidgets/defaultPairs.js"></script>
+<script src="../client/js/embeddableWidgets/kaikoWebsocket.js"></script>
+<script src="../client/js/embeddableWidgets/getTicker.js"></script>
+<script src="../client/js/embeddableWidgets/ticker/embTicker.js"></script>
+<link rel='stylesheet' type='text/css' href='../client/style/widgets/trades.css'/>
+<link rel='stylesheet' type='text/css' href='../client/style/widgets/ticker.css'/>

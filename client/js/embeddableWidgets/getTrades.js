@@ -1,5 +1,5 @@
 	
-function getLasttrades(exchange, pair, max, callback) {
+function getLastTrades(exchange, pair, max, callback) {
 	var xmlhttp = new XMLHttpRequest();
 	var url = 'https://api.kaiko.com/v1/trades/'+exchange+'/'+pair;
 	var trades;

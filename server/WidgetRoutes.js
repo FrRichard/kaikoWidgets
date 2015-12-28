@@ -8,9 +8,12 @@ function ApiWidgetRoutes(params) {
 ApiWidgetRoutes.prototype.init = function(callback) {
 	var self = this;
 	this.app.get('/trades', function(req, res) {
-		// console.log(path.join(this.webapp_client_path, '../client/js/embeddableWidgets/trades/embTrades.html'));
 		res.sendFile(path.join(__dirname, '../client/js/embeddableWidgets/trades/embTrades.html'));
-	}); 
+	});
+
+	this.app.get('/ticker', function(req, res) {
+		res.sendFile(path.join(__dirname, '../client/js/embeddableWidgets/ticker/embTicker.html'));
+	});
 
 	if(callback) {
 		callback();

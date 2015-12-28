@@ -12,6 +12,11 @@
 	height:1em;
 }
 
+#kaikowidget_ticker {
+	background: #17242D;
+	min-height:200px;
+}
+
 #kaikowidget_ticker_list {
 	list-style-type: none;
 	padding-left: 1em;

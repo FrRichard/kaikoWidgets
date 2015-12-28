@@ -3,7 +3,7 @@ var kaikoWebsocket = wsChannel();
 var tableStructure = '';
 var max = 10;
 var lastTrades = [];
-var currentExchange = ['huobi'];
+var currentExchange = ['coinbase'];
 var selectedExchange = {
 	get current () {
 		if(currentExchange.length == 0) return undefined;
@@ -12,12 +12,11 @@ var selectedExchange = {
 }
 
 function updateLastTrades(trades) {
-		lastTrades = trades; 
-		updateDOM(trades);
+	updateDOM(trades);
 }
 
 // get the last 10trades
-getLasttrades(currentExchange[0], getDefaultPair(currentExchange[0]), max, updateLastTrades);
+getLastTrades(currentExchange[0], getDefaultPair(currentExchange[0]), max, updateLastTrades);
 
 kaikoWebsocket.addEventListener('message', function(event) {
 	var exchange = selectedExchange.current;
@@ -58,33 +57,13 @@ function updateDOM(trades) {
 	})
 }
 
-// function formatDate(timestamp) {
-// 	if(!timestamp) {
-// 		var date = new Date();
-// 	} else {
-// 		var date = new Date(timestamp);
-// 	}
-// 	var hours = date.getHours();
-// 	var minutes = "0" + date.getMinutes();
-// 	var seconds = "0" + date.getSeconds();
-
-// 	formattedDate = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
-// 	return formattedDate;
-// }
-
-// function formatPrice(price) {
-// 	//limit 2 decimal
-// 	var price = Math.floor(price*100)/100;
-// 	return price;
-// }
-
 function getExchangename(exchange) {
 	this.exchange = exchange;
 	return this.exchange;
 }
 
 function exchangeSwitch() {
-	var exchange = document.getElementById('exchangeSwitch').value;
+	var exchange = document.getElementById('tradeSwitch').value;
 	currentExchange[0] = exchange;
 	//clean former exchange trades
 	cleanDOM(lastTrades);
