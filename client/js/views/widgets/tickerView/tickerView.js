@@ -14,7 +14,9 @@ define('tickerView', [
 			template: _.template(TickerViewTemplate),
 
 			events: {
-				'change #tickerSwitch': 'exchangeSwitch'
+				'change #tickerSwitch': 'exchangeSwitch',
+				'click  #embedticker': 'showTradesEmbed',
+				'focusout #embedticker': 'hideTradesEmbed'
 			},
 
 			initialize: function() {
@@ -76,7 +78,15 @@ define('tickerView', [
 				this.tickerCollection.restart();
 			},
 
+			showTradesEmbed: function() {
+				$('#embedticker').html('<textarea id=embedtickertext></textarea>');
+				$('#embedtickertext').text('<iframe src="http://kaikowidgets.herokuapp.com/ticker" style="border:none; height:200px; min-height:200px; width:285px; overflow-y:hidden"></iframe>')
+				$('#embedtickertext').focus();
+			},
 
+			hideTradesEmbed: function() {
+				$('#embedticker').text(' Embed this widget to your page ! ');
+			},
 
 
 		});
