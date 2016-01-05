@@ -51,11 +51,12 @@ define('heatmapChart', ['d3', 'moment'], function(d3, moment) {
 			this.svg.append('text')
 				.attr('id', 'volumeDetails')
 				.attr('x', function() {
-					return self.width-300;
+					return self.width;
 				})
 				.attr('y', function() {
 					return -15;
-				});
+				})
+				.attr('text-anchor', 'end');
 
 
 			this.timeScale = d3.time.scale().range([0, self.width]);
