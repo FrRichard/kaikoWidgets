@@ -15,8 +15,11 @@
     "proxy"
   ],
   "dependencies": {
+    "body-parser": "^1.14.2",
+    "d3": "^3.5.12",
     "express": "*",
     "node-mysql": "^0.4.2",
+    "q": "^1.4.1",
     "request": "^2.67.0",
     "underscore": "*"
   },

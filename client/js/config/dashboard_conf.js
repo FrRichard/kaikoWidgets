@@ -10,8 +10,8 @@ define('dashboard_conf', [], function() {
 			},
 
 			orderbook: {
-				id: 'orderbook',
-				width: 5,
+				id: 'heatmap',
+				width: 9,
 				height: 7,
 				col: 3,
 				row: 0

@@ -22,14 +22,11 @@ define('kaikoWebsocket', [], function() {
 	};
 
 	wsChannel.instance = null;
-	// wsChannel.
 
 	wsChannel.getInstance = function() {
 		if(wsChannel.instance === null) {
 			this.instance =  new wsChannel();
-			// return wsChannel.instance;
 		} 
-			// console.log("Already instantiated");
 		return wsChannel.instance;
 		
 	};

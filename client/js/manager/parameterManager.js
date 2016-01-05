@@ -16,13 +16,18 @@ define('parameterManager', [], function() {
 		currentPair: 'btcusd'
 	}
 
+	parameterManager.prototype.exchangeKeys = ['btc-e', 'btcchina', 'bitfinex', 'bitstamp', 'coinbase', 'kraken', 'okcoin' ];
+
 
 	parameterManager.prototype.defaultPairs = {
 		bitstamp: 'btcusd',
 		coinbase: 'btcusd',
 		bitfinex: 'btcusd',
 		btcchina: 'btccny',
-		huobi: 'btccny'
+		huobi: 'btccny',
+		"btc-e": 'btcusd',
+		kraken: 'btcusd',
+		okcoin: 'btccny'
 	}
 
 	parameterManager.prototype.getDefaultPair = function getDefaultPair(exchange) {

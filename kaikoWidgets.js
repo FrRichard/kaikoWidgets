@@ -1,5 +1,6 @@
 var express = require('express');
 var path = require('path');
+var bodyParser = require('body-parser');
 var app = express();
 var webapp = process.cwd() + '/';
 var webapp_server_path = webapp + 'server/';
@@ -11,6 +12,8 @@ var ApiProxy = require(webapp_server_path + '/ApiProxy');
 
 
 app.use(express.static(__dirname, +'/client'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended:true }));
 
 var params = {
 	app: app,

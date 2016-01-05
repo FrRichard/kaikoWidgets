@@ -5,8 +5,9 @@ define('appView',[
 	'tradeView',
 	'tradeModel',
 	'tickerView',
-	'tickerModel'
-	] , function(KaikoWebsocket, Grid, NavbarView, TradeView, TradeModel, TickerView, TickerModel ) {	
+	'tickerModel',
+	'heatmapView',
+	] , function(KaikoWebsocket, Grid, NavbarView, TradeView, TradeModel, TickerView, TickerModel, HeatmapView) {	
 	var app = Backbone.View.extend({
 		initialize: function() {
 			//init Grid
@@ -23,7 +24,7 @@ define('appView',[
 			if(type == 'trading')  {
 				var tradeView = new TradeView();
 				var tickerView = new TickerView();
-				// tickerView.render();
+				var heatmapView = new HeatmapView();
 			}
 
 		}

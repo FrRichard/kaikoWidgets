@@ -2,7 +2,7 @@
 @import url('/client/style/navbar.css');
 @import url('/client/style/widgets/trades.css');
 @import url('/client/style/widgets/ticker.css');
-
+@import url('/client/style/widgets/charts/heatmap.css');
 
 body {
 	background: #2B5988;
