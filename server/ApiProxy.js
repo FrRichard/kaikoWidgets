@@ -72,7 +72,7 @@ ApiProxy.prototype.init = function(callback) {
 			to: Math.floor(Date.now()/1000),
 			resolution: 5
 		}
-		console.log(qs);
+
 		_.each(apiConf.defaultPairs, function(pair, exchange) {
 			var params = {
 				exchange: exchange,
