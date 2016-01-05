@@ -212,8 +212,9 @@ define('heatmapChart', ['d3', 'moment'], function(d3, moment) {
 				d3.select('#updateTimer').text(function() {
 					return 'Updated ' + lastUpdate + 'sec ago';
 				})
-				if(lastUpdate >= 60) {
+				if(lastUpdate > 59) {
 					clearInterval(interval);
+					interval = null;
 				}				
 			}, 1000);
 

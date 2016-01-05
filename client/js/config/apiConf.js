@@ -9,7 +9,7 @@ define('apiConf', [], function() {
 		},
 
 		heatmap: {
-			urlModel: '/api/heatmap/?params='
+			urlModel: '/api/heatmap/'
 		}
 	}
 

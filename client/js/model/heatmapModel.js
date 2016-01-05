@@ -3,7 +3,7 @@ define('heatmapModel',
 		var heatmapModel = Backbone.Model.extend({
 			initialize: function(params) {
 				this.params = params;
-				this.url = ApiConf.heatmap.urlModel + JSON.stringify(params);
+				this.url = ApiConf.heatmap.urlModel;
 			}
 
 
