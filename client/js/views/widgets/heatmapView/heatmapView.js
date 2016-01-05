@@ -1,16 +1,14 @@
 define('heatmapView', [
-	'text!/client/js/views/widgets/heatmapView/heatmapViewTemplate.html',
 	'heatmapModel',
 	'parameterManager',
 	'formatUtils',
 	'heatmapChart'
 	
-	], function(HeatmapViewTemplate, HeatmapModel, ParameterManager, formatUtils, HeatmapChart) {
+	], function(HeatmapModel, ParameterManager, formatUtils, HeatmapChart) {
 
 		var heatmapView = Backbone.View.extend({
 
 			el: '#heatmap',
-			template: _.template(HeatmapViewTemplate),
 
 			events: {},
 
