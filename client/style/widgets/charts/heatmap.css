@@ -1,0 +1,61 @@
+rect.bordered {
+  stroke: #E6E6E/*6;
+  stroke-width:2*/px;   
+}
+
+text.mono {
+  font-size: 9pt;
+  font-family: Consolas, courier;
+  fill: #aaa;
+}
+
+text.axis-workweek {
+  fill: #000;
+}
+
+text.axis-worktime {
+  fill: #000;
+}
+
+#heatmap {
+  overflow-y: hidden;
+}
+
+.heatmap .exchangelabel {
+  font-size: 0.9em;
+  font-weight: 600;
+  fill:rgb(239, 250, 239);
+}
+
+.heatmap .total {
+  font-size: 0.9em;
+  font-weight: 600;
+  fill: rgb(239, 250, 239);
+}
+
+.heatmap .totallabel {
+  font-size: 0.9em;
+  font-weight: 600;
+  fill: rgb(239, 250, 239);
+}
+
+.heatmap .defaultVolume {
+  fill: rgba(74, 99, 116, 0.14);
+}
+
+.heatmap .xaxis path,
+.heatmap xaxis line {
+  fill: none;
+  stroke: black;
+  shape-rendering: crispEdges;
+}
+
+.heatmap .heatmapTitle {
+  font-size: 2em;
+  fill: aliceblue;
+}
+
+.heatmap #volumeDetails {
+  font-size:1em;
+  fill: aliceblue;
+}
