@@ -24,19 +24,19 @@ text.axis-worktime {
 .heatmap .exchangelabel {
   font-size: 0.9em;
   font-weight: 600;
-  fill:rgb(239, 250, 239);
+  fill:rgb(23, 36, 45);
 }
 
 .heatmap .total {
   font-size: 0.9em;
   font-weight: 600;
-  fill: rgb(239, 250, 239);
+  fill: rgb(23, 36, 45);
 }
 
 .heatmap .totallabel {
   font-size: 0.9em;
   font-weight: 600;
-  fill: rgb(239, 250, 239);
+  fill: rgb(23, 36, 45);
 }
 
 .heatmap .defaultVolume {
@@ -52,10 +52,10 @@ text.axis-worktime {
 
 .heatmap .heatmapTitle {
   font-size: 2em;
-  fill: aliceblue;
+  fill: rgb(23, 36, 45);
 }
 
 .heatmap #volumeDetails {
   font-size:1em;
-  fill: aliceblue;
+  fill: rgb(23, 36, 45);
 }

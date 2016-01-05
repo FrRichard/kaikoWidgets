@@ -177,6 +177,7 @@ define('heatmapChart', ['d3', 'moment'], function(d3, moment) {
 					.on('mouseout', function() {
 						var color = self.colorScale(exchange.v[j]);
 						d3.select(this).style('fill',color);
+						d3.select('#volumeDetails').text('');
 					});
 				})
 

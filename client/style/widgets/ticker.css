@@ -1,7 +1,7 @@
 #embedticker {
 	padding: 0.5em 0 0.3em 1em;
-	background: #1D1C1B;
-	color: white;
+	background: #CBD3D0;
+	color: rgb(23, 36, 76);
 	font-weight: 900;
 	font-size: 0.9em;
 }
@@ -13,7 +13,7 @@
 }
 
 #kaikowidget_ticker {
-	background: #17242D;
+	background: #F5F6F7;
 	min-height:200px;
 }
 
@@ -25,11 +25,11 @@
 
 #ticker_last {
 	font-size:3em;
-	color:#F7E208;
+	color:#17242D;
 }
 
 .volume {
-	color:azure;
+	color:rgb(23, 36, 45);
 }
 
 #tickerSwitch {
@@ -38,7 +38,7 @@
 	margin-left: 1em;
 	background: white;
 	color: #004756;
-	border: 0.5px solid;
+	border: 1px solid;
 	border-color: rgb(169, 169, 169 );
 }
 
