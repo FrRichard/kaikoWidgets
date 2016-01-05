@@ -203,21 +203,9 @@ define('heatmapChart', ['d3', 'moment'], function(d3, moment) {
 		};
 
 		this.updateTimer = function() {
-			var lastUpdate = 0;
-			d3.select('#updateTimer').text(function(){
-				return 'Updated 0sec ago';
-			});
-			var interval = setInterval(function() {
-				lastUpdate += 1;
-				d3.select('#updateTimer').text(function() {
-					return 'Updated ' + lastUpdate + 'sec ago';
-				})
-				if(lastUpdate > 59) {
-					clearInterval(interval);
-					interval = null;
-				}				
-			}, 1000);
-
+			d3.select('#updateTimer').text(function() {
+				return 'Last update ' + moment().format('hh:mm A') ;
+			})
 		}
 
 		this.getMinMax = function(data) {
