@@ -70,8 +70,10 @@ ApiProxy.prototype.init = function(callback) {
 		var qs = {
 			from: Math.floor(Date.now()/1000 - 3600), //14400
 			to: Math.floor(Date.now()/1000),
-			resolution: 5
+			resolution: 1
 		}
+
+		console.log(qs);
 
 		_.each(apiConf.defaultPairs, function(pair, exchange) {
 			var params = {
@@ -88,7 +90,6 @@ ApiProxy.prototype.init = function(callback) {
 			};
 
 			res.status('200').send(result);
-			console.log();
 		});
 
 

@@ -69,7 +69,7 @@ body {
 }
 
 .up {
-	color: #c0392b;
+	color: green;
 }
 
 .fa-caret-down {
@@ -77,5 +77,5 @@ body {
 }
 
 .fa-caret-up {
-	color: #c0392b;
+	color: green;
 }

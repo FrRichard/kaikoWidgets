@@ -59,7 +59,7 @@ define('heatmapChart', ['d3', 'moment'], function(d3, moment) {
 				.attr('text-anchor', 'end');
 
 
-			this.timeScale = d3.time.scale().range([0, self.width]);
+			this.timeScale = d3.time.scale.utc().range([0, self.width]);
 		};
 
 
@@ -170,8 +170,8 @@ define('heatmapChart', ['d3', 'moment'], function(d3, moment) {
 					})
 					.on('mouseover', function() {
 						d3.select(this).style('fill', 'rgb(63, 85, 197)');
-						var start = moment(d3.select(this).attr('data-time')*1).format('hh:mm');
-						var end = moment(d3.select(this).attr('data-time')*1 +60000).format('hh:mm');
+						var start = moment.utc(d3.select(this).attr('data-time')*1).format('hh:mm');
+						var end = moment.utc(d3.select(this).attr('data-time')*1 +60000).format('hh:mm');
 						var value = Math.floor(d3.select(this).attr('data-value')*100)/100;
 						d3.select('#volumeDetails').text('Volume from ' + start + ' to ' + end + ' :   ' + value + ' BTC');
 					})
@@ -204,7 +204,7 @@ define('heatmapChart', ['d3', 'moment'], function(d3, moment) {
 
 		this.updateTimer = function() {
 			d3.select('#updateTimer').text(function() {
-				return 'Last update ' + moment().format('hh:mm A') ;
+				return 'Last update ' + moment.utc().format('hh:mm A') ;
 			})
 		}
 

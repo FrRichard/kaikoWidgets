@@ -32,6 +32,7 @@ define('heatmapView', [
 				this.heatmapModel.fetch({
 					success: function(response, data) {
 						self.render(data);
+						console.log(data);
 					}
 				});
 			}
